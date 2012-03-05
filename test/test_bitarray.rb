@@ -38,7 +38,12 @@ class TestBitArray < Test::Unit::TestCase
       ba2[index] = 0
       index
     end
-    assert_equal(@public_ba.to_s, @public_ba.to_s_fast)
+
+    def ba2.to_s_slow
+      inject("") { |a, b| a + b.to_s }
+    end
+
+    assert_equal(@public_ba.to_s_slow, @public_ba.to_s)
 
     @public_ba.size.times do |i|
       assert_equal(@public_ba[i], on.include?(i) ? 1 : 0)
@@ -66,7 +71,7 @@ class TestBitArray < Test::Unit::TestCase
 
   def test_to_s
     ba = BitArray.new(35)
-    [1, 5, 6, 7, 10, 16, 33].each{|i|ba[i] = 1}
+    [1, 5, 6, 7, 10, 16, 33].each { |i| ba[i] = 1 }
     assert_equal "01000111001000001000000000000000010", ba.to_s
   end
 

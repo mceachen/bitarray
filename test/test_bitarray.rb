@@ -39,7 +39,7 @@ class TestBitArray < Test::Unit::TestCase
       index
     end
 
-    def ba2.to_s_slow
+    def @public_ba.to_s_slow
       inject("") { |a, b| a + b.to_s }
     end
 

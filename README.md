@@ -1,5 +1,7 @@
 # BitArray: A simple bit array/bit field library in pure Ruby
 
+[![Build Status](https://secure.travis-ci.org/mceachen/bitarray.png)](http://travis-ci.org/mceachen/bitarray)
+
 Basic, pure Ruby bit field. Pretty fast (for what it is) and memory efficient. Works well for Bloom filters (the reason I wrote it).
 
 Written in 2007 and not updated since then, just bringing it on to GitHub by user request. It used to be called BitField and was hosted at http://snippets.dzone.com/posts/show/4234 .. I will review the code and bring the docs up to date in due course.
